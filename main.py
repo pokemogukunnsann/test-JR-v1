@@ -94,6 +94,7 @@ def get_fare():
         # 全てのデコーディングを試行後に結果をチェック
         if parsed_json is not None:
             # 成功した場合、JSONを返す
+            json_string = json.dumps(parsed_json, ensure_ascii=False, indent=2)
             return jsonify(parsed_json)
         else:
             # 全て失敗した場合、エラーを返す
